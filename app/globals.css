@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --card: #f8fafc;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --primary: #2563eb;
+  --accent: #7c3aed;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --muted: #64748b;
+  --radius: 1rem;
+  --density: 1;
+}
+
+.dark {
+  --background: #0b0f17;
+  --card: #111827;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --primary: #3b82f6;
+  --accent: #8b5cf6;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --muted: #6b7280;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-foreground: var(--text);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-muted: var(--muted);
+  --radius-xl: var(--radius);
+  --radius-2xl: calc(var(--radius) + 0.5rem);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--primary) 10%, transparent), transparent 32rem),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34rem),
+    var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition-duration: 180ms;
+}
+
+.premium-motion * {
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--card) 74%, transparent);
+  box-shadow: 0 20px 60px color-mix(in srgb, #020617 12%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.density-compact {
+  --density: 0.82;
+}
+
+.density-comfortable {
+  --density: 1;
+}
+
+.density-spacious {
+  --density: 1.18;
+}
