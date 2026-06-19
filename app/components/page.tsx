@@ -1,4 +1,5 @@
 import { Bell, CreditCard, Search, User } from "lucide-react";
+import { ComponentStudio } from "@/components/catalog/component-studio";
 import { EmptyState } from "@/components/feedback/empty-state";
 import { LoadingSpinner, SkeletonLoader } from "@/components/feedback/loading-patterns";
 import { PageHeader } from "@/components/layouts/page-header";
@@ -17,6 +18,7 @@ export default function ComponentsPage() {
     <>
       <PageHeader eyebrow="Component Laboratory" title="Reusable UI Components" description="Preview, variants, code examples, and usage notes for the primitives that power every Julio product." />
       <div className="grid gap-6">
+        <ComponentStudio />
         <Card>
           <CardHeader><div><CardTitle>Buttons</CardTitle><CardDescription>Primary, secondary, outline, ghost, success, danger, loading, disabled, and three sizes.</CardDescription></div></CardHeader>
           <div className="flex flex-wrap gap-3">

@@ -42,7 +42,7 @@ export function DesktopSidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <aside className={cn("sticky top-0 hidden h-screen shrink-0 border-r bg-card/70 p-4 backdrop-blur-xl lg:block", collapsed ? "w-20" : "w-72")}>
+    <aside className={cn("sticky top-0 hidden h-screen shrink-0 overflow-y-auto border-r bg-card/70 p-4 backdrop-blur-xl lg:block", collapsed ? "w-20" : "w-72")}>
       <div className={cn("mb-8 flex items-center gap-3", collapsed && "justify-center")}>
         <div className="grid size-10 place-items-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/25">
           <Sparkles className="size-5" />
@@ -74,7 +74,7 @@ export function MobileDrawer() {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-background/50 backdrop-blur-md" />
-        <Dialog.Content className="fixed inset-y-0 left-0 z-50 w-80 max-w-[86vw] border-r bg-card p-4 shadow-2xl">
+        <Dialog.Content className="fixed inset-y-0 left-0 z-50 w-80 max-w-[86vw] overflow-y-auto border-r bg-card p-4 shadow-2xl">
           <div className="mb-8 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="grid size-10 place-items-center rounded-2xl bg-primary text-white">
